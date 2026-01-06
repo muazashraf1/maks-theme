@@ -303,9 +303,9 @@ nav button:hover {
   color: var(--primary-color);
 }
 
-.services-section {
+/* .services-section {
   border: 1px solid #000;
-}
+} */
 
 .content {
   display: flex;
@@ -353,7 +353,7 @@ nav button:hover {
 }
 
 .service-cards-section {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -369,34 +369,31 @@ nav button:hover {
   /* border: 2px solid red; */
   position: relative;
   transition: 0.4s;
-  
 }
 
 .service-icon {
-    position: absolute;
-    padding: 15px;
-    border-radius: 100%;
-    z-index: 1000;
-    border: 7px solid #dad8d8;
-    background-color: var(--primary-color);
-    left: 5%;
-    top: 43%;
-    transition: 0.4s;
+  position: absolute;
+  padding: 15px;
+  border-radius: 100%;
+  z-index: 1000;
+  border: 7px solid #dad8d8;
+  background-color: var(--primary-color);
+  left: 5%;
+  top: 43%;
+  transition: 0.4s;
 }
 
 .service-card:hover .service-icon {
-    background-color: rgb(82, 81, 81);
+  background-color: rgb(82, 81, 81);
 }
-
 
 .service-card:hover {
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.068);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.068);
 }
 
-
 .service-icon i {
-    font-size: 25px;
-    color: white;
+  font-size: 25px;
+  color: white;
 }
 
 .service-content {
@@ -420,6 +417,144 @@ nav button:hover {
   padding-bottom: 40px;
 }
 
+.plan-consultant {
+  width: 100%;
+  min-height: 50vh;
+  background-image: url(./Images/imageye___-_imgi_87_banner__03.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.plan-content {
+  /* height: 100%; */
+  max-width: 1200px;
+  padding: 0 20px; /* mobile padding */
+  /* border: 1px solid #000; */
+  padding-left: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.plan-content .primary-button {
+  width: 240px;
+}
+
+.plan-content h2 {
+  font-family: var(--primary-font-family);
+  color: rgba(0, 0, 0, 0.694);
+  font-size: 26px;
+}
+
+.plan-content p {
+  font-family: var(--primary-font-family);
+  color: #000000a1;
+  font-size: 15px;
+}
+
+.portfolio-section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+}
+
+.portfolio-ul {
+  list-style: none;
+  display: flex;
+  font-family: var(--primary-font-family);
+  gap: 30px;
+  color: #000000a1;
+  margin-top: -20px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-ul li  {
+  cursor: pointer;
+}
+
+
+.portfolio-ul li:nth-child(1) {
+  padding: 7px 17px;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.portfolio-card-section {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 40px;
+}
+
+.portfolio-card {
+  width: 360px;
+  border: 1px solid #000;
+  height: 310px;
+  background-image: url(Images/imageye___-_imgi_12_1.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  /* position: relative; */
+}
+
+.portfolio-card:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.523)), url(Images/imageye___-_imgi_12_1.jpg);
+  transform: rotateY(7deg) rotateX(7deg) ;
+}
+
+
+
+.portfolio-card-content {
+  /* position: absolute; */
+  /* border: 1px solid #000; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.portfolio-card:hover .portfolio-card-content {
+  opacity: 1;
+}
+
+.portfolio-card-content h2 {
+  font-family: var(--primary-font-family);
+  color: white;
+  font-size: 27px;
+}
+
+.portfolio-card-content p {
+  font-family: var(--primary-font-family);
+  font-size: 20px;
+  color: white;
+}
+
+.portfolio-card-content i {
+  /* border: 1px solid #000; */
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+  color: var(--primary-color);
+}
 
 @media screen and (width <= 995px) {
   .hero {
@@ -514,6 +649,28 @@ nav button:hover {
   }
   .service-cards-section {
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
 
+
+  .plan-content {
+    padding: 0 15px;
+  }
+
+  .plan-content h2 {
+    font-size: 20px;
+  }
+
+  .plan-content p {
+    font-size: 14px;
+  }
+
+  .plan-content .primary-button {
+    width: 180px;
+  }
+
+  .plan-consultant {
+    background-attachment: scroll;
   }
 }
