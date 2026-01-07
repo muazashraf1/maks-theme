@@ -60,13 +60,13 @@ nav button:hover {
 
 .header {
   display: flex;
+  /* max-width: 1200px;  */
   padding: 10px;
   align-items: center;
   gap: 90px;
   align-items: center;
   margin-bottom: 180px;
-  /* align-self: flex-start; */
-  /* width: 90%; */
+  justify-content: space-evenly;
 }
 
 .header-ul {
@@ -77,6 +77,15 @@ nav button:hover {
   gap: 30px;
   color: white;
   font-size: 14px;
+}
+
+.header-ul li {
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.header-ul li:hover {
+  color: var(--primary-color);
 }
 
 .header i {
@@ -459,7 +468,7 @@ nav button:hover {
 .portfolio-section {
   display: flex;
   flex-direction: column;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   justify-content: center;
   align-items: center;
   /* padding-top: 50px;
@@ -479,10 +488,9 @@ nav button:hover {
   align-items: center;
 }
 
-.portfolio-ul li  {
+.portfolio-ul li {
   cursor: pointer;
 }
-
 
 .portfolio-ul li:nth-child(1) {
   padding: 7px 17px;
@@ -492,7 +500,7 @@ nav button:hover {
 }
 
 .portfolio-card-section {
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -502,7 +510,7 @@ nav button:hover {
 
 .portfolio-card {
   width: 360px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   height: 310px;
   background-image: url(Images/imageye___-_imgi_12_1.jpg);
   background-size: cover;
@@ -510,15 +518,78 @@ nav button:hover {
   justify-content: center;
   align-items: center;
   transition: 0.3s;
-  /* position: relative; */
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.portfolio-card-2 {
+  background-image: url(Images/imageye___-_imgi_13_2.jpg);
+}
+
+.portfolio-card-3 {
+  background-image: url(Images/imageye___-_imgi_14_3.jpg);
+}
+
+.portfolio-card-4 {
+  background-image: url(Images/imageye___-_imgi_15_4.jpg);
+}
+
+.portfolio-card-5 {
+  background-image: url(Images/imageye___-_imgi_16_5.jpg);
+}
+
+.portfolio-card-6 {
+  background-image: url(Images/imageye___-_imgi_17_6.jpg);
+}
+
+
+.portfolio-card::after {
+  content: "";
+  position: absolute;
+  height: 20%;
+  width: 200%;
+  background-color: var(--primary-color);
+  top: -20%;
+  right: -20%;
+  transform: translate(150%, -100%) rotate(50deg) scale(1);
+  z-index: 2;
+  /* transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: transform 1.5s ease;
+  opacity: 0.6;
+}
+
+.portfolio-card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.541);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s ease;
+  transition-delay: 0.5s;
+}
+
+.portfolio-card:hover::before {
+  opacity: 1;
+  transition-delay: 0.5s;
+  /* transition: 2s; */
+}
+
+.portfolio-card:hover::after {
+  transform: translate(-170%, 120%) rotate(50deg) scale(3);
+  height: 100%;
+  transition: 2s;
 }
 
 .portfolio-card:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.523)), url(Images/imageye___-_imgi_12_1.jpg);
-  transform: rotateY(7deg) rotateX(7deg) ;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.523)),
+    url(Images/imageye___-_imgi_12_1.jpg); */
+  transform: rotateY(7deg) rotateX(7deg);
 }
-
-
 
 .portfolio-card-content {
   /* position: absolute; */
@@ -527,24 +598,30 @@ nav button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  opacity: 0;
-  transition: 0.3s;
+  gap: 12px;
+  /* opacity: 0; */
+  transform: scale(0);
+  /* transition: 0s; */
+  transition-delay: 0s;
 }
 
 .portfolio-card:hover .portfolio-card-content {
-  opacity: 1;
+  /* opacity: 1; */
+  transform: scale(1);
+  transition-delay: 0.6s;
+  /* transition: 1s; */
 }
 
 .portfolio-card-content h2 {
   font-family: var(--primary-font-family);
   color: white;
-  font-size: 27px;
+  font-size: 25px;
+  font-weight: 400;
 }
 
 .portfolio-card-content p {
   font-family: var(--primary-font-family);
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 }
 
@@ -554,7 +631,102 @@ nav button:hover {
   border-radius: 20px;
   background-color: white;
   color: var(--primary-color);
+  transition: 0.6s;
+  cursor: pointer;
 }
+
+.portfolio-card-content i:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.team-section {
+  padding: 20px;
+  border: 1px solid #000;
+  background-color: #F8F8F8;
+}
+
+.team-card-section {
+  border: 1px solid #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0px 30px 0px;
+}
+
+.team-card {
+  width: 360px;
+  height: 80vh;
+  border: 1px solid red;
+  background-image: url(Images/imageye___-_imgi_18_1.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.team-card-2 {
+  background-image: url(Images/imageye___-_imgi_19_2.jpg);
+}
+
+.team-card-3 {
+  background-image: url(Images/imageye___-_imgi_20_3.jpg);
+}
+
+.team-card-content {
+  width: 100%;
+  /* height: 30%; */
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  gap: 10px;
+  transition: 0.5s;
+  transform: translateX(-380px);
+}
+
+.team-card:hover .team-card-content {
+  transform: translateX(0px);
+}
+
+.team-card-content h3 {
+  font-family: var(--primary-font-family);
+  color: white;
+  font-size: 16px;
+}
+
+.team-card-content p {
+  font-family: var(--primary-font-family);
+  color: white;
+  font-size: 15px;
+}
+
+.team-card-content-icons i {
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.team-card-content-icons i:hover {
+  color: black;
+}
+
+.team-card-content-icons {
+  display: flex;
+  gap: 10px;
+}
+
+
+
+
 
 @media screen and (width <= 995px) {
   .hero {
@@ -653,7 +825,6 @@ nav button:hover {
     align-items: center;
   }
 
-
   .plan-content {
     padding: 0 15px;
   }
@@ -673,4 +844,9 @@ nav button:hover {
   .plan-consultant {
     background-attachment: scroll;
   }
+
+  .team-card-section {
+    flex-direction: column;
+    row-gap: 20px;
+  } 
 }
