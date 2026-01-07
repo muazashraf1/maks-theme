@@ -1242,10 +1242,10 @@ textarea {
 @media screen and (width <= 760px) {
   .header {
     justify-content: center;
-    gap: 70px;
+    gap: 100px;
   }
   .header img {
-    height: 14vh;
+    height: 11vh;
     width: 30vw;
   }
   .header ul {
@@ -1300,6 +1300,10 @@ textarea {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+
+  .portfolio-ul li {
+    font-size: 14px;
   }
 
   .portfolio-card-section {
@@ -1400,7 +1404,7 @@ textarea {
   }
 }
 
-@media screen and (width <= 550px) {
+@media screen and (width <= 560px) {
   /* * {
     border: 1px solid red;
   } */
@@ -1414,6 +1418,10 @@ textarea {
   .pricing-card-section {
     flex-direction: column;
     gap: 30px;
+  }
+
+  .portfolio-ul {
+    flex-wrap: wrap;
   }
 
   .after-testimonial {
